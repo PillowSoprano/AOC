@@ -1,5 +1,5 @@
 # my_first_project
-# 🧮 Algorithm-to-Outcome Concordance (AOC) Calculator
+# Algorithm-to-Outcome Concordance (AOC) Calculator
 
 This repository provides a reproducible implementation of the **Algorithm-to-Outcome Concordance (AOC)** metric —  
 a novel quantitative framework for assessing how well an AI model's predictive performance translates to real-world clinical outcomes.
