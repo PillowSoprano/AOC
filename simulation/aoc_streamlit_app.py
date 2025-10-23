@@ -21,30 +21,42 @@ aoc = (auc * corr) / (1 + i2 / 100)
 
 # --- Display results ---
 st.metric(label="Calculated AOC", value=f"{aoc:.3f}")
+
+# --- Result Interpretation (Dynamic Feedback) ---
+if aoc > 0.6:
+    st.success("High translational concordance \(≧▽≦)/")
+elif aoc > 0.3:
+    st.warning("Moderate concordance ( ･᷄ὢ･᷅ )")
+else:
+    st.error("Low concordance ┻━┻︵╰(‵□′)╯︵┻━┻ – model may not translate clinically.")
+
 st.caption("Formula: AOC = (AUC × Corr) / (1 + I² / 100)")
 
 # --- Visualisation Section ---
-st.markdown("### 📈 Sensitivity of AOC to I²")
+st.markdown("### ˊ_>ˋComparative Stability: AUC, Corr, and AOC vs I²")
 
 i2_values = np.linspace(0, 100, 200)
 aoc_values = (auc * corr) / (1 + i2_values / 100)
 
 fig, ax = plt.subplots(figsize=(7, 4))
-ax.plot(i2_values, aoc_values, label="AOC vs I²", linewidth=2)
-ax.axvline(i2, color="red", linestyle="--", alpha=0.6)
+ax.plot(i2_values, np.repeat(auc, len(i2_values)), 'k--', label='AUC (constant)')
+ax.plot(i2_values, np.repeat(corr, len(i2_values)), 'g--', label='Corr (constant)')
+ax.plot(i2_values, aoc_values, 'r-', label='AOC')
+ax.axvline(i2, color="gray", linestyle=":", alpha=0.5)
 ax.set_xlabel("I² (%)")
-ax.set_ylabel("AOC Value")
-ax.set_title("AOC Decreases with Increasing Heterogeneity")
+ax.set_ylabel("Metric Value")
+ax.set_title("AOC shows smoother decay with increasing heterogeneity")
 ax.legend()
 ax.grid(alpha=0.3)
 
 st.pyplot(fig)
 
 # --- Save Results ---
-if st.button(" Save current simulation"):
-    np.savetxt("aoc_simulation_snapshot.csv", [[auc, corr, i2, aoc]], 
-               delimiter=",", header="AUC,Corr,I2,AOC", comments="")
-    st.success("Saved to aoc_simulation_snapshot.csv!")
+if st.button(":D Export simulation result"):
+    import pandas as pd
+    df = pd.DataFrame([[auc, corr, i2, aoc]], columns=["AUC", "Corr", "I²", "AOC"])
+    df.to_csv("aoc_output.csv", index=False)
+    st.success("Saved! Check aoc_output.csv in your workspace.")
 
 st.markdown("---")
 st.caption("Built with ( ´ ▽ ` )ﾉ❤️ by Xiyao Yu | Inspired by Algorithm-to-Outcome Concordance Framework")
