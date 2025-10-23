@@ -6,16 +6,14 @@ a novel quantitative framework for assessing how well an AI model's predictive p
 
 > Paper: *A Proposed Framework for Quantifying AI-to-Clinical Translation: The Algorithm-to-Outcome Concordance (AOC) Metric*, 2025.
 
-## What is AOC?( ･᷄ὢ･᷅ )
+## What is AOC?
 The **AOC metric** integrates three components:
 - **AUC (Area Under ROC Curve)** → predictive discrimination  
 - **Corr (Correlation)** between model predictions and observed clinical outcomes  
 - **I² (Heterogeneity)** to account for inter-cohort variability  
 
 The formula is:
-\[
-AOC = \frac{AUC \times Corr}{1 + I^2/100}
-\]
+AOC = (AUC × Corr) / (1 + I² / 100)
 
 AOC ranges from 0 to 1, and its interpretation is:
 | AOC | Interpretation |
@@ -26,29 +24,34 @@ AOC ranges from 0 to 1, and its interpretation is:
 
 ---
 
-## Quick Start\(≧▽≦)/
+## Quick Start
 
-### 1.Clone this repo ( ´ ▽ ` )ﾉ
+### 1.Clone this repo
 ```bash
 git clone https://github.com/yourname/AOC-Calculator.git
 cd AOC-Calculator
 ```
 
-### 2.Install dependenciesˊ_>ˋ
-pip install -r requirements.txt
+### 2.Install dependencies
 
-### 3.Run the example (＞人＜;)
+```bash
+pip install -r requirements.txt
+```
+
+### 3.Run the example
 ```bash
 python demo_example.py
 ```
 AUC=0.92, Corr=0.82, AOC=0.754 → High fidelity
 
-### Example Dataset:D
+### Example Dataset
 example_data.csv contains a small synthetic dataset (10 patients) with:
-Column	Description
-patient_id	Sample ID
-predicted_score	AI model prediction (0–1)
-actual_outcome	Clinical response (0/1)
+| Column | Description |
+|---------|--------------|
+| patient_id | Sample ID |
+| predicted_score | AI model prediction (0–1) |
+| actual_outcome | Clinical response (0/1) |
+
 
 ### Optional Web App
 You can launch an interactive Streamlit demo with:
