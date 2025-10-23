@@ -1,0 +1,19 @@
+study_id,biomarker_name,cancer_type,ai_modality,sample_size,auc,corr,i2,outcome_type,reference,notes
+SKCM_001,TIDE Score,Melanoma,Transcriptomic,25,0.68,0.38,0,ORR,Jiang et al. 2018,Anti-PD-1 cohort
+SKCM_002,IMPRES,Melanoma,Transcriptomic,297,0.83,0.52,0,ORR,Auslander et al. 2018,High sensitivity for responders
+SKCM_003,eTILs Score,Melanoma,Digital Pathology,191,0.78,0.15,0,PFS,Chatziioannou et al. 2023,Low correlation despite significance
+SKCM_004,Radiomics Signature,Melanoma,Radiomics,71,0.88,0.27,0,OS,Mitra et al. 2025,CT-based features
+NSCLC_001,Deep-IO (H&E),NSCLC,Digital Pathology,344,0.66,0.21,0,PFS,Coudray et al. 2024,European validation cohort
+NSCLC_002,Deep-IO (H&E),NSCLC,Digital Pathology,344,0.66,0.21,0,OS,Coudray et al. 2024,Same cohort as NSCLC_001
+NSCLC_003,FDG-PET Radiomics,NSCLC,Radiomics,123,0.76,0.30,0,ORR,Trebeschi et al. 2019,Baseline CT features
+NSCLC_004,Delta-Radiomics,NSCLC,Radiomics,105,0.88,0.40,0,OS,Sun et al. 2024,Early treatment changes
+NSCLC_005,CTRS Score,NSCLC,Radiomics,458,0.83,0.12,0,PFS,Sun et al. 2024,Real-world validation
+RCC_001,DL-Pathology,RCC,Digital Pathology,200,0.78,0.17,0,OS,Simulated,Hypothetical example
+RCC_002,Immune Signature,RCC,Transcriptomic,150,0.75,0.21,0,ORR,Simulated,Gene expression-based
+PANCANCER_001,IRS (TMB+4gene),Pan-cancer,Multi-omic,352,0.80,0.35,0,PFS,Strata trial 2023,Validated across 10+ cancers
+META_001,Transcriptomic Meta,Melanoma,Transcriptomic,500,0.75,0.45,25,OS,Pooled analysis,4 studies pooled
+META_002,Radiomics Meta,NSCLC,Radiomics,800,0.72,0.28,65,PFS,Pooled analysis,High heterogeneity across centers
+KEYNOTE_001,mRNA-4157 Vaccine,Melanoma,Neoantigen (genomic),157,0.85,0.70,0,RFS,Weber et al. 2024,KEYNOTE-942 trial
+EXAMPLE_HIGH,Hypothetical High AOC,Melanoma,Multi-omic,100,0.90,0.80,0,OS,Tutorial example,Ideal scenario for teaching
+EXAMPLE_LOW,Hypothetical Low AOC,NSCLC,Single-gene,50,0.95,0.10,0,ORR,Tutorial example,High AUC but poor correlation
+EXAMPLE_HETEROGENEOUS,Hypothetical Heterogeneous,Pan-cancer,Radiomics,1000,0.85,0.60,80,PFS,Tutorial example,Demonstrates I2 penalty
