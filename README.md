@@ -28,7 +28,7 @@ AOC ranges from 0 to 1, and its interpretation is:
 
 ### 1.Clone this repo
 ```bash
-git clone https://github.com/yourname/AOC-Calculator.git
+git clone https://github.com/PillowSoprano/my_first_project
 cd AOC-Calculator
 ```
 
