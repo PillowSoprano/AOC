@@ -1,4 +1,4 @@
-# my_first_project
+# AOC
 # Algorithm-to-Outcome Concordance (AOC) Calculator
 
 This repository provides a reproducible implementation of the **Algorithm-to-Outcome Concordance (AOC)** metric —  
